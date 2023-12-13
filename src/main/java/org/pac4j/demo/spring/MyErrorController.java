@@ -28,7 +28,7 @@ public class MyErrorController extends BasicErrorController {
         final HttpStatus status = getStatus(request);
         if (status == HttpStatus.UNAUTHORIZED) {
             return new ModelAndView("error401");
-        } else if (status == HttpStatus.FORBIDDEN) {
+        } else if (status.equals(HttpStatus.FORBIDDEN)) {
             return new ModelAndView("error403");
         } else {
             return new ModelAndView("error500");
